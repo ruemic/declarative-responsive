@@ -1,17 +1,10 @@
 // Generated on 2014-03-28 using generator-webapp 0.4.7
 'use strict';
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
-
 module.exports = function (grunt) {
 
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
-
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
@@ -34,10 +27,7 @@ module.exports = function (grunt) {
                     livereload: true
                 }
             },
-            jstest: {
-                files: ['test/spec/{,*/}*.js'],
-                tasks: ['test:watch']
-            },
+
             gruntfile: {
                 files: ['Gruntfile.js']
             },
@@ -78,16 +68,6 @@ module.exports = function (grunt) {
                     ]
                 }
             },
-            test: {
-                options: {
-                    port: 9001,
-                    base: [
-                        '.tmp',
-                        'test',
-                        '<%= yeoman.app %>'
-                    ]
-                }
-            },
             dist: {
                 options: {
                     open: true,
@@ -121,23 +101,9 @@ module.exports = function (grunt) {
             all: [
                 'Gruntfile.js',
                 '<%= yeoman.app %>/scripts/{,*/}*.js',
-                '!<%= yeoman.app %>/scripts/vendor/*',
-                'test/spec/{,*/}*.js'
+                '!<%= yeoman.app %>/scripts/vendor/*'
             ]
         },
-
-
-        // Mocha testing framework configuration options
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-                }
-            }
-        },
-
-
 
 
         // Compiles Sass to CSS and generates necessary files if requested
@@ -191,19 +157,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Renames files for browser caching purposes
-        rev: {
-            dist: {
-                files: {
-                    src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
-                        '<%= yeoman.dist %>/styles/fonts/{,*/}*.*'
-                    ]
-                }
-            }
-        },
 
         // Reads HTML for usemin blocks to enable smart builds that automatically
         // concat, minify and revision files. Creates configurations in memory so
@@ -250,7 +203,7 @@ module.exports = function (grunt) {
                 options: {
                     collapseBooleanAttributes: true,
                     collapseWhitespace: true,
-                    removeAttributeQuotes: true,
+                    removeAttributeQuotes: false,
                     removeCommentsFromCDATA: true,
                     removeEmptyAttributes: true,
                     removeOptionalTags: true,
@@ -320,14 +273,19 @@ module.exports = function (grunt) {
         },
 
 
+        uncss: {
+            dist: {
+                files: {
+                    'dist/styles/main.css': 'dist/index.html'
+                }
+            }
+        },
+
 
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
                 'compass:server',
-                'copy:styles'
-            ],
-            test: [
                 'copy:styles'
             ],
             dist: [
@@ -339,6 +297,8 @@ module.exports = function (grunt) {
         }
     });
 
+
+    grunt.loadNpmTasks('grunt-uncss');
 
     grunt.registerTask('serve', function (target) {
         if (target === 'dist') {
@@ -359,21 +319,6 @@ module.exports = function (grunt) {
         grunt.task.run(['serve']);
     });
 
-    grunt.registerTask('test', function(target) {
-        if (target !== 'watch') {
-            grunt.task.run([
-                'clean:server',
-                'concurrent:test',
-                'autoprefixer',
-            ]);
-        }
-
-        grunt.task.run([
-            'connect:test',
-            'mocha'
-        ]);
-    });
-
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
@@ -381,15 +326,13 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concat',
         'cssmin',
-        'uglify',
         'copy:dist',
-        'rev',
-        'usemin'
+        'usemin',
+        'uncss'
     ]);
 
     grunt.registerTask('default', [
         'newer:jshint',
-        'test',
         'build'
     ]);
 };
