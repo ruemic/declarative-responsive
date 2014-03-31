@@ -1,0 +1,225 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Declarative Responsive Design Rocks</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-36">
+                    <h2 class="text-center b30">Declarative Responsive Design</h2>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-xs-36 col-sm-18">
+                    <p class="lead">Build an efficient, robust & highly maintainable presentational layer with a <a href="http://en.wikip edia.org/wiki/Declarative_programming">declarative</a> approach to responsive design. Here's how:</p>
+
+                    <ul class="key-points media-list b50">
+
+                        <li class="media b10">
+                          <span class="pull-left">
+                            <i class="fa fa-thumbs-o-up img-circle text-center"></i>
+                          </span>
+                          <div class="media-body">
+                            <p><strong>Leverage the Community -</strong> Use an open source responsive framework with a large community behind it. The latest version of <a href="http://getbootstrap.com/css">Bootstrap</a> or <a href="http://foundation.zurb.com/docs/">Foundation</a> have solved 1,000's of messy cross-browser edge cases for you.</p>
+                          </div>
+                        </li>
+
+                        <li class="media b10">
+                          <span class="pull-left">
+                            <i class="fa fa-book img-circle text-center"></i>
+                          </span>
+                          <div class="media-body">
+                            <p><strong>Study Your Framework -</strong> Use them in your HTML to get as close as possible to your target look & feel before writing any CSS. To see what I'm talking about: <a href="view-source:http://contest.bitballoon.com">View the source</a></p>
+                          </div>
+                        </li>
+
+                        <li class="media b10">
+                          <span class="pull-left">
+                            <i class="fa fa-wrench img-circle text-center"></i>
+                          </span>
+                          <div class="media-body">
+                            <p><strong>Customize with Variables -</strong> Adjust the  Sass/Less variables of your framework to suit your needs. For this example, I've bumped up the Bootstrap grid to 36 columns for greater control over the layout:</p>
+                            <pre>$grid-columns: 36;</pre>
+                          </div>
+                        </li>
+
+                        <li class="media b10">
+                          <span class="pull-left">
+                            <i class="fa fa-pencil img-circle text-center"></i>
+                          </span>
+                          <div class="media-body">
+                            <p><strong>Roll Your Own -</strong> When you've reached the limits of what you can achieve with the core framework, consider making your own utility classes to address common style patterns. For example, Bootstrap 3 doesn't offer any vertical spacing utilities, so I've rolled my own:</p>
+                            <pre>/* Vertical Spacing */
+.b10 { margin-bottom: 10px; }
+.b30 { margin-bottom: 30px; }
+.b50 { margin-bottom: 30px; }</pre>
+                          </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <div class="col-xs-36 col-sm-18 col-md-16 col-md-offset-1 panel panel-default">
+
+                    <div class="row">
+                        <div class="col-xs-34 col-xs-push-1">
+
+                            <h4 class="text-center">Sample Contact Form</h4>
+                            <p class="b20">Fill out this contact form for a chance to win a premium <a href="http://www.bitballoon.com">BitBalloon</a> site. It's OK to enter a fake physical address, extra points if it's whimsical, <em>but you must enter a real email to be eligible to win.</em></p>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xs-36 col-md-30 col-md-push-3">
+
+                            <form name="contest" action="thanks.html" method="post" class="form-horizontal" >
+
+                                <div class="row b10">
+                                    <div class="col-xs-28 col-sm-30 pull-right">
+                                        <input type="text" class="form-control" name="name">
+                                    </div>
+                                    <label for="name" class="control-label pull-right">
+                                        <small>
+                                            Name:
+                                        </small>
+                                    </label>
+                                </div>
+
+                                <div class="row b10">
+                                    <div class="col-xs-28 col-sm-30 pull-right">
+                                        <input type="email" class="form-control" name="email">
+                                    </div>
+                                    <label for="email" class="control-label pull-right">
+                                        <small>
+                                            Email:
+                                        </small>
+                                    </label>
+                                </div>
+
+                                <div class="row b10">
+                                    <div class="col-xs-28 col-sm-30 pull-right">
+                                        <input type="text" class="form-control" name="street">
+                                    </div>
+                                    <label for="street" class="control-label pull-right">
+                                        <small>
+                                            Street:
+                                        </small>
+                                    </label>
+                                </div>
+
+                                <div class="row b10">
+                                    <div class="col-xs-28 col-sm-30 pull-right">
+                                        <input type="text" class="form-control" name="city">
+                                    </div>
+                                    <label for="city" class="control-label pull-right">
+                                        <small>
+                                            City:
+                                        </small>
+                                    </label>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-18">
+                                        <div class="row">
+                                            <div class="col-xs-20 col-sm-24 pull-right">
+                                                <input type="text" class="form-control" name="state">
+                                            </div>
+                                            <label for="state" class="control-label pull-right">
+                                                <small>
+                                                    State:
+                                                </small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-18">
+                                        <div class="row">
+                                            <div class="col-xs-24 pull-right">
+                                                <input type="text" class="form-control" name="zip">
+                                            </div>
+                                            <label for="zip" class="control-label pull-right">
+                                                <small>
+                                                    Zip:
+                                                </small>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-28 col-sm-30 pull-right">
+                                        <hr>
+                                    </div>
+                                </div>
+
+                                <div class="row b30">
+                                    <div class="col-xs-28 col-sm-30 pull-right">
+                                        <p><button class="btn btn-lg btn-success col-xs-36" href="#">Send</button></p>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-49522812-1');ga('send','pageview');
+        </script>
+
+        <!-- build:js scripts/plugins.js -->
+
+        <!-- endbuild -->
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
